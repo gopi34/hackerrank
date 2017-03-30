@@ -39,3 +39,10 @@ a = []
 for a_i in range(n):
     a_t = [int(a_temp) for a_temp in input().strip().split(' ')]
     a.append(a_t)
+    
+sum1,sum2,helper = 0,0,len(a)-1
+
+for i in range(len(a[0])):
+    sum1 += (a[i][i])
+    sum2 += (a[i][helper-i])
+print(abs(sum1 - sum2))
