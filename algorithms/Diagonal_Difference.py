@@ -1,3 +1,11 @@
+'''
+Sample Input
+
+3
+11 2 4
+4 5 6
+10 8 -12
+
 Sample Output
 
 15
@@ -17,3 +25,24 @@ The secondary diagonal is:
 10
 Sum across the secondary diagonal: 4 + 5 + 10 = 19
 Difference: |4 - 19| = 15
+'''
+
+
+
+#!/bin/python3
+
+import sys
+
+
+n = int(input().strip())
+a = []
+for a_i in range(n):
+    a_t = [int(a_temp) for a_temp in input().strip().split(' ')]
+    a.append(a_t)
+    
+sum1,sum2,helper = 0,0,len(a)-1
+
+for i in range(len(a[0])):
+    sum1 += (a[i][i])
+    sum2 += (a[i][helper-i])
+print(abs(sum1 - sum2))
